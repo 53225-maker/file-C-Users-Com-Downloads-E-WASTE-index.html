@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="เว็บไซต์ให้ความรู้เกี่ยวกับขยะอิเล็กทรอนิกส์ วิธีทิ้ง การคัดแยก ผลกระทบ และการรีไซเคิล">
+<title>E-WASTE | ขยะอิเล็กทรอนิกส์ใกล้ตัว</title>
+<style>
+:root{--green:#176b52;--deep:#103d35;--blue:#237a9b;--mint:#e8f5ef;--ink:#20312d;--muted:#64736e;--paper:#f7faf8;--white:#fff;--line:#dce8e2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,"Noto Sans Thai",sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+header{background:linear-gradient(120deg,#103d35,#176b52 60%,#237a9b);color:white;padding:22px max(20px,calc((100% - 1100px)/2));}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:1.25rem;font-weight:800;letter-spacing:2px}.tag{font-size:.86rem;color:#d8f1e6}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+nav button{border:1px solid #ffffff55;background:#ffffff14;color:white;border-radius:999px;padding:9px 14px;font-size:.9rem;cursor:pointer}
+nav button:hover,nav button.active{background:white;color:var(--deep)}
+main{max-width:1100px;margin:28px auto;padding:0 20px 60px}
+.hero{background:linear-gradient(135deg,#e2f3e9,#e5f2f8);border:1px solid var(--line);border-radius:26px;padding:clamp(26px,5vw,58px);position:relative;overflow:hidden}
+.eyebrow{color:var(--green);font-weight:700;font-size:.85rem;letter-spacing:1px}
+h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.2;color:var(--deep);margin:10px 0}
+.lead{font-size:1.1rem;max-width:720px;color:#405a51}
+.hero-icon{font-size:4rem;position:absolute;right:6%;top:25%;opacity:.18}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.primary,.secondary{border:0;border-radius:12px;padding:12px 18px;font-weight:700;cursor:pointer}
+.primary{background:var(--green);color:white}.secondary{background:white;color:var(--deep);border:1px solid var(--line)}
+.section-title{margin:34px 0 14px;color:var(--deep);font-size:1.45rem}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;text-align:left;cursor:pointer;transition:.18s;box-shadow:0 5px 18px #123d3510}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #123d3518;border-color:#9fcbb7}
+.card .emoji{font-size:2rem}.card h3{margin:8px 0 4px;color:var(--deep)}.card p{margin:0;color:var(--muted);font-size:.94rem}
+.page{display:none;background:white;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,42px);box-shadow:0 8px 28px #123d350b}
+.page.active{display:block}.page h1{font-size:clamp(1.8rem,4vw,2.5rem)}.page h2{color:var(--green);font-size:1.18rem;margin-top:26px}
+.page p{color:#465a53}.page li{margin:8px 0;padding-left:4px}
+.callout{background:var(--mint);border-left:4px solid var(--green);padding:16px 18px;border-radius:10px;margin:20px 0}
+.pill{display:inline-block;background:#e8f3f8;color:#1c617c;border-radius:999px;padding:4px 11px;font-size:.8rem;font-weight:700}
+.back{margin-top:24px}.source{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);margin-top:28px;padding-top:18px}
+footer{text-align:center;color:var(--muted);padding:24px 16px;border-top:1px solid var(--line);font-size:.88rem}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.hero-icon{right:5%;top:10%;font-size:3rem}.top{align-items:flex-start;flex-direction:column}nav button{font-size:.82rem;padding:8px 11px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top"><div><div class="brand">♻ E-WASTE</div><div class="tag">ขยะอิเล็กทรอนิกส์ใกล้ตัว</div></div><div class="tag">เรียนรู้ • คัดแยก • จัดการอย่างถูกวิธี</div></div>
+  <nav aria-label="เมนูหลัก">
+    <button class="active" data-page="home">หน้าหลัก</button>
+    <button data-page="dispose">วิธีทิ้ง</button>
+    <button data-page="types">ประเภทขยะ</button>
+    <button data-page="impact">ผลกระทบ</button>
+    <button data-page="recycle">คัดแยกและรีไซเคิล</button>
+  </nav>
+</header>
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="eyebrow">ELECTRONIC WASTE AWARENESS</div>
+    <h1>ขยะอิเล็กทรอนิกส์<br>ใกล้ตัวกว่าที่คิด</h1>
+    <p class="lead">อุปกรณ์ที่เราใช้ในชีวิตประจำวัน เมื่อหมดอายุการใช้งานแล้วควรได้รับการจัดการอย่างเหมาะสม มาเรียนรู้วิธีลดขยะและดูแลสิ่งแวดล้อมไปด้วยกัน</p>
+    <div class="actions"><button class="primary" onclick="showPage('dispose')">เริ่มเรียนรู้</button><button class="secondary" onclick="showPage('recycle')">รู้จักการรีไซเคิล</button></div>
+    <div class="hero-icon" aria-hidden="true">📱♻</div>
+  </div>
+  <h2 class="section-title">เลือกหัวข้อที่ต้องการเรียนรู้</h2>
+  <div class="grid">
+    <button class="card" onclick="showPage('dispose')"><div class="emoji">🗑️</div><h3>01 วิธีทิ้งขยะอิเล็กทรอนิกส์</h3><p>ทิ้งอย่างไรให้ถูกวิธีและปลอดภัย</p></button>
+    <button class="card" onclick="showPage('types')"><div class="emoji">💻</div><h3>02 ประเภทของขยะอิเล็กทรอนิกส์</h3><p>สำรวจอุปกรณ์ใกล้ตัวที่จัดเป็น E-Waste</p></button>
+    <button class="card" onclick="showPage('impact')"><div class="emoji">🌏</div><h3>03 ผลกระทบต่อสิ่งแวดล้อม</h3><p>ทำไมการกำจัดไม่ถูกวิธีจึงเป็นปัญหา</p></button>
+    <button class="card" onclick="showPage('recycle')"><div class="emoji">♻️</div><h3>04 วิธีคัดแยกและรีไซเคิล</h3><p>ส่งต่อวัสดุให้กลับมาใช้ประโยชน์</p></button>
+  </div>
+  <div class="callout"><strong>จำไว้:</strong> อย่าทิ้งอุปกรณ์อิเล็กทรอนิกส์และแบตเตอรี่ปะปนกับขยะทั่วไป ควรตรวจสอบจุดรับคืนหรือจุดรับ E-Waste ในพื้นที่ก่อนนำไปส่ง</div>
+</section>
+
+<section id="dispose" class="page">
+  <span class="pill">หัวข้อ 01</span><h1>วิธีทิ้งขยะอิเล็กทรอนิกส์อย่างถูกวิธี</h1>
+  <p>ขยะอิเล็กทรอนิกส์ไม่ควรถูกทิ้งรวมกับขยะทั่วไป เพราะอุปกรณ์บางชนิดมีแบตเตอรี่หรือส่วนประกอบที่ต้องจัดการเป็นพิเศษ การคัดแยกและส่งให้หน่วยงานที่เหมาะสมช่วยลดความเสี่ยงต่อคนและสิ่งแวดล้อม</p>
+  <h2>แนวทางก่อนนำไปทิ้ง</h2><ol>
+    <li>แยกอุปกรณ์อิเล็กทรอนิกส์ออกจากขยะทั่วไป</li><li>ตรวจสอบว่ามีข้อมูลส่วนตัวอยู่ในอุปกรณ์หรือไม่ และสำรองหรือลบข้อมูลก่อนส่งต่อ</li><li>ถอดแบตเตอรี่ได้เฉพาะกรณีที่ออกแบบให้ถอดได้ตามคู่มือผู้ผลิต</li><li>เก็บอุปกรณ์และแบตเตอรี่แยกจากความร้อน ความชื้น และวัสดุไวไฟ</li><li>นำไปส่งจุดรับ E-Waste ร้านค้าหรือหน่วยงานที่มีโครงการรับคืนอย่างเหมาะสม</li>
+  </ol>
+  <div class="callout"><strong>ข้อควรระวัง:</strong> ไม่เผา ไม่ทุบ ไม่เจาะ และไม่แกะอุปกรณ์หรือแบตเตอรี่เอง หากแบตเตอรี่บวม ร้อน รั่ว หรือเสียหาย อย่าสัมผัสหรือขนย้ายโดยไม่จำเป็น ให้แจ้งผู้ใหญ่หรือผู้เชี่ยวชาญเพื่อขอคำแนะนำ</div>
+  <h2>ตัวอย่างสิ่งที่ควรแยกส่ง</h2><p>โทรศัพท์มือถือเก่า คอมพิวเตอร์ สายชาร์จ เครื่องใช้ไฟฟ้าขนาดเล็ก และแบตเตอรี่ ควรตรวจสอบว่าจุดรับในพื้นที่รับอุปกรณ์ชนิดนั้นหรือไม่ก่อนเดินทางไปส่ง</p>
+  <button class="secondary back" onclick="showPage('home')">← กลับหน้าหลัก</button>
+</section>
+
+<section id="types" class="page">
+  <span class="pill">หัวข้อ 02</span><h1>ประเภทของขยะอิเล็กทรอนิกส์</h1>
+  <p>ขยะอิเล็กทรอนิกส์ (Electronic Waste หรือ E-Waste) คืออุปกรณ์ไฟฟ้าและอิเล็กทรอนิกส์ที่เจ้าของไม่ต้องการใช้งานแล้ว หรือหมดอายุการใช้งาน</p>
+  <h2>ตัวอย่างขยะอิเล็กทรอนิกส์ในชีวิตประจำวัน</h2><ul>
+    <li><strong>อุปกรณ์สื่อสาร:</strong> โทรศัพท์มือถือ แท็บเล็ต และโทรศัพท์บ้าน</li>
+    <li><strong>อุปกรณ์คอมพิวเตอร์:</strong> โน้ตบุ๊ก คอมพิวเตอร์ตั้งโต๊ะ คีย์บอร์ด เมาส์ และจอภาพ</li>
+    <li><strong>อุปกรณ์ภาพและเสียง:</strong> โทรทัศน์ วิทยุ ลำโพง และเครื่องเล่นต่าง ๆ</li>
+    <li><strong>เครื่องใช้ไฟฟ้า:</strong> พัดลม หม้อหุงข้าว เครื่องปิ้งขนมปัง และอุปกรณ์ไฟฟ้าขนาดเล็ก</li>
+    <li><strong>อุปกรณ์พลังงาน:</strong> แบตเตอรี่และอุปกรณ์สำรองไฟ</li>
+    <li><strong>อุปกรณ์เชื่อมต่อ:</strong> สายชาร์จ อะแดปเตอร์ และอุปกรณ์ต่อพ่วง</li>
+  </ul>
+  <div class="callout"><strong>ทำไมต้องแยกประเภท?</strong> อุปกรณ์แต่ละชนิดประกอบด้วยวัสดุแตกต่างกัน เช่น โลหะ พลาสติก แก้ว และแบตเตอรี่ การแยกประเภทช่วยให้เลือกวิธีนำกลับมาใช้ประโยชน์หรือกำจัดได้เหมาะสม</div>
+  <button class="secondary back" onclick="showPage('home')">← กลับหน้าหลัก</button>
+</section>
+
+<section id="impact" class="page">
+  <span class="pill">หัวข้อ 03</span><h1>ผลกระทบของขยะอิเล็กทรอนิกส์ต่อสิ่งแวดล้อม</h1>
+  <p>หากขยะอิเล็กทรอนิกส์ถูกทิ้งหรือจัดการไม่เหมาะสม อาจทำให้สารหรือวัสดุบางชนิดแพร่กระจายสู่สิ่งแวดล้อม และเพิ่มความเสี่ยงต่อสุขภาพของคนและสัตว์</p>
+  <h2>ผลกระทบที่อาจเกิดขึ้น</h2><ul>
+    <li><strong>ดิน:</strong> สารจากชิ้นส่วนหรือแบตเตอรี่ที่จัดการไม่ถูกต้องอาจปนเปื้อนในดิน</li>
+    <li><strong>น้ำ:</strong> การทิ้งในพื้นที่ไม่เหมาะสมอาจทำให้สารปนเปื้อนเข้าสู่แหล่งน้ำ</li>
+    <li><strong>อากาศ:</strong> การเผาสายไฟหรือชิ้นส่วนอิเล็กทรอนิกส์อาจปล่อยควันและมลพิษ</li>
+    <li><strong>สุขภาพ:</strong> การสัมผัสหรือสูดดมสารจากกระบวนการกำจัดที่ไม่ปลอดภัยอาจเป็นอันตราย</li>
+    <li><strong>ทรัพยากร:</strong> การทิ้งอุปกรณ์ที่ยังมีวัสดุมีค่าอยู่ทำให้สูญเสียโอกาสในการนำกลับมาใช้ใหม่</li>
+  </ul>
+  <h2>เราช่วยลดผลกระทบได้อย่างไร?</h2><p>ใช้เครื่องใช้ไฟฟ้าอย่างคุ้มค่า ซ่อมแซมเมื่อทำได้ เลือกซื้อเท่าที่จำเป็น และส่งอุปกรณ์ที่หมดอายุไปยังระบบรับคืนหรือรีไซเคิลที่เหมาะสม</p>
+  <button class="secondary back" onclick="showPage('home')">← กลับหน้าหลัก</button>
+</section>
+
+<section id="recycle" class="page">
+  <span class="pill">หัวข้อ 04</span><h1>วิธีคัดแยกและรีไซเคิลขยะอิเล็กทรอนิกส์</h1>
+  <p>การรีไซเคิลเป็นกระบวนการนำวัสดุจากอุปกรณ์ที่ไม่ใช้แล้วกลับมาใช้ประโยชน์ โดยต้องผ่านการคัดแยกและจัดการอย่างเหมาะสมจากผู้ที่มีความรู้และอุปกรณ์ที่ปลอดภัย</p>
+  <h2>ขั้นตอนการคัดแยกเบื้องต้น</h2><ol>
+    <li>รวบรวมอุปกรณ์ที่ไม่ใช้งานแล้วไว้ในจุดที่แห้งและปลอดภัย</li><li>แยกอุปกรณ์ตามประเภท เช่น โทรศัพท์ คอมพิวเตอร์ สายไฟ และเครื่องใช้ไฟฟ้า</li><li>แยกแบตเตอรี่ที่ถอดได้ตามคำแนะนำของผู้ผลิต โดยไม่แกะหรือทำให้เสียหาย</li><li>ตรวจสอบจุดรับคืนหรือสถานที่รับ E-Waste ที่เชื่อถือได้</li><li>ส่งมอบให้หน่วยงานหรือผู้ประกอบการที่มีระบบจัดการเหมาะสม</li>
+  </ol>
+  <h2>ประโยชน์ของการรีไซเคิล</h2><ul><li>ช่วยลดปริมาณขยะที่ต้องนำไปกำจัด</li><li>ช่วยประหยัดทรัพยากรธรรมชาติและพลังงานจากการใช้วัสดุใหม่</li><li>ช่วยนำโลหะ พลาสติก และวัสดุอื่นกลับมาใช้ประโยชน์</li><li>ลดความเสี่ยงจากการกำจัดขยะอิเล็กทรอนิกส์ไม่ถูกวิธี</li></ul>
+  <div class="callout"><strong>เริ่มต้นได้ที่ตัวเรา:</strong> ใช้อุปกรณ์ให้นานขึ้น ดูแลรักษา ซ่อมเมื่อเหมาะสม และแยกส่งเมื่อหมดอายุการใช้งาน</div>
+  <button class="secondary back" onclick="showPage('home')">← กลับหน้าหลัก</button>
+</section>
+
+<div class="source"><strong>แหล่งข้อมูลเพิ่มเติม</strong><br>
+  • <a href="https://www.greener.bangkok.go.th/" target="_blank" rel="noopener">Greener Bangkok</a><br>
+  • <a href="https://www.pcd.go.th/" target="_blank" rel="noopener">กรมควบคุมมลพิษ</a><br>
+  • <a href="https://www.itu.int/itu-d/sites/statistics/" target="_blank" rel="noopener">International Telecommunication Union (ITU)</a><br>
+  <small>หมายเหตุ: จุดรับและเงื่อนไขการรับขยะอิเล็กทรอนิกส์อาจแตกต่างกัน ควรตรวจสอบกับหน่วยงานในพื้นที่ก่อนนำไปส่ง</small>
+</div>
+</main>
+<footer>♻ E-WASTE | ขยะอิเล็กทรอนิกส์ใกล้ตัว<br>ร่วมกันใช้ทรัพยากรอย่างคุ้มค่า เพื่อสิ่งแวดล้อมที่ยั่งยืน</footer>
+<script>
+function showPage(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+</script>
+</body>
+</html>
